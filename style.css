@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.add-guest-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.guest-count {
+    text-align: right;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+#guestList {
+    list-style: none;
+    padding: 0;
+}
+
+#guestList li {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+#guestList li.attending {
+    background-color: #e6ffe6; 
+    border-color: #a3e6a3;
+}
+
+#guestList li.not-attending {
+    background-color: #ffe6e6;
+    border-color: #e6a3a3;
+}
+
+#guestList li:last-child {
+    margin-bottom: 0;
+}
+
+.guest-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1; 
+}
+
+.guest-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.guest-meta {
+    font-size: 12px;
+    color: #888;
+}
+
+.guest-actions button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #dc3545; 
+}
+
+.guest-actions button.toggle-rsvp {
+    background-color: #ffc107; 
+    color: #333;
+}
+
+.guest-actions button.edit-guest {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.guest-actions button.toggle-rsvp:hover {
+    background-color: #e0a800;
+}
+
+.guest-actions button:hover:not(.toggle-rsvp) {
+    background-color: #c82333;
+}
+
+.guest-category {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+
+.category-friend {
+    background-color: greenyellow; 
+}
+.category-family {
+    background-color:purple; 
+}
+
+.category-colleague {
+    background-color: blue; 
+}
+
+
+@media (max-width: 500px) {
+    .add-guest-section {
+        flex-direction: column;
+    }
+    .guest-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 10px; 
+    }
+    #guestList li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .guest-actions button {
+        margin-left: 0;
+        width: 100%;
+    }
+}
